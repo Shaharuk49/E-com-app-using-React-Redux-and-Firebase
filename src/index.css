@@ -461,36 +461,75 @@ textarea {
   align-items: center;
 }
 
-.header__navbar {
-  margin: 0 auto;
+/* Nav.css */
+.navbar {
+  background: linear-gradient(90deg, #4f46e5 0%, #38bdf8 100%);
+  box-shadow: 0 2px 8px rgba(44, 88, 145, 0.1);
+  padding: 0.7rem 2rem;
+  border-radius: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 950px;
 }
 
-.header__navbar ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.navbar ul {
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
 }
 
-.header__navbar ul li {
-  padding-right: 38px;
+.navbar li {
+  position: relative;
 }
 
-.header__navbar ul li:last-child {
-  padding-right: 0;
+.navbar a,
+.navbar button {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0.5rem 1.3rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
 }
 
-.header__navbar ul li a {
-  color: #666666;
-  font-size: 20px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.navbar a:hover,
+.navbar button:hover {
+  background: #fff;
+  color: #4f46e5;
+  box-shadow: 0 2px 8px rgba(44, 88, 145, 0.1);
 }
 
-.header__navbar ul li a:hover {
-  color: #175a86;
+.navbar button {
+  background: #22d3ee;
+  color: #22223b;
+  margin-left: 0.7rem;
+  font-weight: 600;
+}
+
+.navbar button:hover {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+@media screen and (max-width: 650px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .navbar {
+    border-radius: 0;
+    padding: 1rem;
+    max-width: 100vw;
+  }
 }
 
 .banner {
@@ -614,8 +653,8 @@ textarea {
 }
 
 .ingredient__image img {
-  /* width: auto;
-  height: auto; */
+  width: auto;
+  height: auto;
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
@@ -730,10 +769,10 @@ textarea {
 }
 .product-img {
   border-radius: 5px;
-  width: 90px;
+  width: 100px;
   -o-object-fit: cover;
   object-fit: cover;
-  min-width: 90px;
+  min-width: 100%;
   height: 90px;
 }
 .account-setting__content .product-table-container .qty_input {

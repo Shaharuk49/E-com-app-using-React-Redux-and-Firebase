@@ -4,7 +4,9 @@ import { modifyQuantityOfAnItem, removeItemFromCart } from "../features/cart";
 
 function CartItem({ item }) {
   const [itemQuantity, setItemQuantity] = useState(item.quantity);
+
   const dispatch = useDispatch();
+
   return (
     <tr>
       <td>
@@ -32,7 +34,7 @@ function CartItem({ item }) {
                 );
                 setItemQuantity(itemQuantity - 1);
               } else {
-                alert("Need add product");
+                alert(`Quantity should not be less than 1`);
               }
             }}
           >
@@ -45,6 +47,8 @@ function CartItem({ item }) {
             value={itemQuantity}
             min="1"
             onChange={(event) => {
+              console.log(typeof event.target.value);
+
               dispatch(
                 modifyQuantityOfAnItem({
                   id: item.id,
